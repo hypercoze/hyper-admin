@@ -8,7 +8,6 @@ package main
 import (
 	"github.com/hypercoze/hyper-admin/app/system/service/internal/biz"
 	"github.com/hypercoze/hyper-admin/app/system/service/internal/conf"
-	"github.com/hypercoze/hyper-admin/app/system/service/internal/data"
 	"github.com/hypercoze/hyper-admin/app/system/service/internal/server"
 	"github.com/hypercoze/hyper-admin/app/system/service/internal/service"
 
@@ -19,5 +18,5 @@ import (
 
 // wireApp init kratos application.
 func wireApp(*conf.Server, *conf.Data, log.Logger) (*kratos.App, func(), error) {
-	panic(wire.Build(server.ProviderSet, data.ProviderSet, biz.ProviderSet, service.ProviderSet, newApp))
+	panic(wire.Build(server.ProviderSet, biz.ProviderSet, service.ProviderSet, newApp))
 }
